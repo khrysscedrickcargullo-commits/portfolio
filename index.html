@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khryss Cedrick Cargullo — IT Student &amp; Aspiring Data Analyst</title>
+<meta name="description" content="Portfolio of Khryss Cedrick G. Cargullo, Information Technology student and aspiring data analyst." />
+
+<!-- Applies the saved theme before first paint, so the page never flashes the wrong theme -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem("kc-theme");
+      if (saved === "light") document.documentElement.setAttribute("data-theme", "light");
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== Cursor glow ===== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ===== Loader ===== -->
+<div class="loader" id="loader">
+  <div class="loader-core"></div>
+  <p class="loader-text">CARGULLO'S PORTFOLIO</p>
+</div>
+
+<!-- ===== Noise / scanline overlay ===== -->
+<div class="scanline" aria-hidden="true"></div>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav-logo">
+    <svg viewBox="0 0 100 100" class="logo-mark" aria-hidden="true">
+      <polygon points="50,4 90,27 90,73 50,96 10,73 10,27" class="logo-hex"/>
+      <path class="logo-claw" d="M30 62 L45 30 M45 62 L58 26 M60 62 L70 34" />
+    </svg>
+    <span class="nav-logo-text">KC<span class="nav-logo-dot">.</span></span>
+  </a>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#home" class="nav-link" data-text="Home">Home</a>
+    <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+    <a href="#education" class="nav-link" data-text="Education">Education</a>
+    <a href="#experience" class="nav-link" data-text="Experience">Experience</a>
+    <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" aria-pressed="false">
+      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/>
+      </svg>
+      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>
+      </svg>
+    </button>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HERO / LANDING ===== -->
+  <section class="hero" id="home">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-line"><span class="eyebrow-dash"></span>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</p>
+
+      <h1 class="hero-name">
+        <span class="hero-name-line reveal-line">Khryss Cedrick</span>
+        <span class="hero-name-line hero-name-accent reveal-line">G. Cargullo</span>
+      </h1>
+
+      <p class="hero-role reveal-line"><span class="role-sep"></span> Aspiring Data Analyst</p>
+
+      <p class="hero-bio reveal-line">
+        I'm Khryss Cedrick, an Information Technology student who is passionate about technology
+        and enjoys learning how things work. Throughout my studies, I've developed an interest in
+        programming, web development, databases, and data analytics. I enjoy working on projects
+        that challenge me to solve problems, learn new skills, and turn ideas into practical solutions.
+      </p>
+
+      <div class="hero-cta reveal-line">
+        <a href="assets/CV.pdf" class="btn btn-primary" download>
+          <span>Download CV</span>
+          <svg viewBox="0 0 24 24" class="btn-icon"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span>Let's Connect</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-portrait reveal-line" id="heroPortrait" aria-hidden="false">
+      <div class="portrait-stage">
+        <div class="portal-spin portal-spin-outer">
+          <div class="portal-ring portal-ring-outer">
+            <svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="192" /></svg>
+          </div>
+        </div>
+        <div class="portal-spin portal-spin-mid">
+          <div class="portal-ring portal-ring-mid">
+            <svg viewBox="0 0 400 400" aria-hidden="true">
+              <circle cx="200" cy="200" r="164" />
+              <path d="M200 22 200 46 M200 354 200 378 M22 200 46 200 M354 200 378 200 M78 78 96 96 M304 304 322 322 M78 322 96 304 M304 96 322 78" />
+            </svg>
+          </div>
+        </div>
+        <div class="portal-spin portal-spin-inner">
+          <div class="portal-ring portal-ring-inner">
+            <svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="138" /></svg>
+          </div>
+        </div>
+        <div class="portal-flash" aria-hidden="true"></div>
+
+        <div class="portrait-frame">
+          <div class="portrait-inner">
+            <img src="assets/pic.jpg" alt="Portrait of Khryss Cedrick G. Cargullo" class="portrait-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="portrait-fallback">
+              <svg viewBox="0 0 24 24" class="portrait-fallback-icon"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span>Add Your Photo</span>
+              <small>assets/profile.jpg</small>
+            </div>
+            <span class="portrait-scan"></span>
+          </div>
+        </div>
+      </div>
+      <span class="portrait-tag">KHRYSS CEDRICK · MANILA, PH</span>
+    </div>
+
+    <button class="scroll-cue" id="scrollCue" aria-label="Scroll to about section">
+      <span>SCROLL</span>
+      <svg viewBox="0 0 24 24"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="section-head reveal">
+      <p class="section-kicker">01 — Core Attributes</p>
+      <h2 class="section-title">Skills</h2>
+      <svg class="claw-divider" viewBox="0 0 200 40"><path d="M10 5 L60 35 M50 2 L100 38 M90 5 L140 33"/></svg>
+    </div>
+
+    <div class="skills-grid">
+      <article class="skill-card reveal" style="--delay:0s">
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 4 8 12v14c0 10 7 17 16 18 9-1 16-8 16-18V12L24 4Z"/><path d="M17 24l5 5 9-11" class="skill-check"/></svg>
+        </div>
+        <h3 class="skill-name">Problem-Solving</h3>
+        <p class="skill-desc">I like breaking complex problems down into smaller parts and
+          working through them step by step until I land on something that actually works.</p>
+        <span class="skill-glow"></span>
+      </article>
+
+      <article class="skill-card reveal" style="--delay:.12s">
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 6c9 0 16 5 16 12s-7 12-16 12-16-5-16-12S15 6 24 6Z"/><path d="M12 30c-3 4-4 8-4 12 4 0 8-1 12-4M36 30c3 4 4 8 4 12-4 0-8-1-12-4" class="skill-check"/></svg>
+        </div>
+        <h3 class="skill-name">Adaptability</h3>
+        <p class="skill-desc">I'm comfortable switching between tools, environments, and
+          requirements, and I try to stay effective even when the situation changes quickly.</p>
+        <span class="skill-glow"></span>
+      </article>
+
+      <article class="skill-card reveal" style="--delay:.24s">
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="20" r="14"/><path d="M18 34v6h12v-6M20 44h8" class="skill-check"/><path d="M24 12v8M18 18l4 2M30 18l-4 2" class="skill-check"/></svg>
+        </div>
+        <h3 class="skill-name">Critical-Thinking</h3>
+        <p class="skill-desc">Before jumping to a solution, I try to ask the right questions
+          first — looking at a problem from a few angles so the fix actually fits.</p>
+        <span class="skill-glow"></span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section" id="education">
+    <div class="section-head reveal">
+      <p class="section-kicker">02 — Training Record</p>
+      <h2 class="section-title">Educational Background</h2>
+      <svg class="claw-divider" viewBox="0 0 200 40"><path d="M10 5 L60 35 M50 2 L100 38 M90 5 L140 33"/></svg>
+    </div>
+
+    <ol class="timeline" id="eduTimeline">
+      <li class="timeline-item reveal">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">2024 — Present</span>
+          <h3 class="timeline-title">Philippine Christian University – Manila</h3>
+          <p class="timeline-sub">College · Bachelor of Science in Information Technology</p>
+          <p class="timeline-loc">1648 Taft Ave., Pedro Gil St., Malate, Manila</p>
+        </div>
+      </li>
+
+      <li class="timeline-item reveal">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">2022 — 2024</span>
+          <h3 class="timeline-title">Philippine Christian University – Manila</h3>
+          <p class="timeline-sub">Senior High School · Science, Technology, and Engineering (STEM)</p>
+          <p class="timeline-loc">1648 Taft Ave., Pedro Gil St., Malate, Manila</p>
+        </div>
+      </li>
+
+      <li class="timeline-item reveal">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">2018 — 2022</span>
+          <h3 class="timeline-title">Parañaque National High School</h3>
+          <p class="timeline-sub">Junior High School</p>
+          <p class="timeline-loc">Baclaran, Parañaque City</p>
+        </div>
+      </li>
+
+      <li class="timeline-item reveal">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">2013 — 2018</span>
+          <h3 class="timeline-title">Baclaran Elementary School – Unit 1</h3>
+          <p class="timeline-sub">Elementary</p>
+          <p class="timeline-loc">Baclaran, Parañaque City</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="achievements-subhead reveal">
+      <h3 class="subsection-title">Achievements</h3>
+    </div>
+
+    <div class="badge-group reveal">
+      <h3 class="badge-group-title">Elementary</h3>
+      <div class="badge-grid">
+        <div class="badge reveal" style="--delay:0s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2014</span>
+          <span class="badge-label">With Honors</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="badge-group reveal">
+      <h3 class="badge-group-title">Junior High School</h3>
+      <div class="badge-grid">
+        <div class="badge reveal" style="--delay:0s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2018</span>
+          <span class="badge-label">With Honors</span>
+        </div>
+        <div class="badge reveal" style="--delay:.08s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2020</span>
+          <span class="badge-label">With Honors</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="badge-group reveal">
+      <h3 class="badge-group-title">Senior High School</h3>
+      <div class="badge-grid">
+        <div class="badge reveal" style="--delay:0s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2023</span>
+          <span class="badge-label">With Honors</span>
+        </div>
+        <div class="badge reveal" style="--delay:.08s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2024</span>
+          <span class="badge-label">With High Honors</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="badge-group reveal">
+      <h3 class="badge-group-title">College</h3>
+      <div class="badge-grid">
+        <div class="badge reveal" style="--delay:0s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2024</span>
+          <span class="badge-label">Dean's Lister</span>
+        </div>
+        <div class="badge reveal" style="--delay:.08s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2025</span>
+          <span class="badge-label">Dean's Lister</span>
+        </div>
+        <div class="badge reveal" style="--delay:.16s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">2026</span>
+          <span class="badge-label">Dean's Lister</span>
+        </div>
+        <div class="badge reveal" style="--delay:.24s">
+          <svg viewBox="0 0 48 48" class="badge-icon"><path d="M24 4 30 16 44 18 34 27 37 41 24 34 11 41 14 27 4 18 18 16Z"/></svg>
+          <span class="badge-year">Gold Awardee</span>
+          <span class="badge-label">Exemplary Academic Performance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience">
+    <div class="section-head reveal">
+      <p class="section-kicker">03 — Work &amp; Involvement</p>
+      <h2 class="section-title">Experience &amp; Organization</h2>
+      <svg class="claw-divider" viewBox="0 0 200 40"><path d="M10 5 L60 35 M50 2 L100 38 M90 5 L140 33"/></svg>
+    </div>
+
+    <div class="exp-grid">
+      <article class="exp-card reveal">
+        <div class="exp-year">2024</div>
+        <h3 class="exp-role">Service Crew</h3>
+        <p class="exp-org">McDonald's Macapagal</p>
+        <p class="exp-desc">Delivered fast, consistent service in a high-volume, fast-paced
+          environment, which helped sharpen my teamwork and time management under pressure.</p>
+      </article>
+
+      <article class="exp-card reveal" style="--delay:.1s">
+        <div class="exp-year">2023–2024</div>
+        <h3 class="exp-role">Work Immersion</h3>
+        <p class="exp-org">Philippine Christian University</p>
+        <p class="exp-desc">Applied what I learned in the classroom to a real workplace setting,
+          getting firsthand exposure to professional workflows and expectations.</p>
+      </article>
+
+      <article class="exp-card reveal" style="--delay:.2s">
+        <div class="exp-year">Organization</div>
+        <h3 class="exp-role">Games Organizer</h3>
+        <p class="exp-org">Campus Events</p>
+        <p class="exp-desc">Organized and coordinated gaming activities, managed participants,
+          and made sure each event ran smoothly from start to finish.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-head reveal">
+      <p class="section-kicker">04 — Contact</p>
+      <h2 class="section-title">Let's Talk</h2>
+      <svg class="claw-divider" viewBox="0 0 200 40"><path d="M10 5 L60 35 M50 2 L100 38 M90 5 L140 33"/></svg>
+      <p class="contact-intro reveal">Have an opportunity, a project in mind, or just want to say hi? Feel free to reach out through any of the channels below.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="https://mail.google.com/mail/?view=cm&fs=1&to=khrysscedrickcargullo@gmail.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" class="contact-icon"><path d="M3 6h18v12H3z"/><path d="m3 6 9 7 9-7"/></svg>
+        <span class="contact-label">Gmail</span>
+        <span class="contact-value">khrysscedrickcargullo@gmail.com</span>
+      </a>
+
+      <a class="contact-card reveal" style="--delay:.08s" href="tel:+639097714252">
+        <svg viewBox="0 0 24 24" class="contact-icon"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+        <span class="contact-label">Contact No.</span>
+        <span class="contact-value">0909 771 4252</span>
+      </a>
+
+      <a class="contact-card reveal" style="--delay:.16s" href="https://www.facebook.com/khryssced" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" class="contact-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <span class="contact-label">Facebook</span>
+        <span class="contact-value">Khryss Cedrick</span>
+      </a>
+
+      <a class="contact-card reveal" style="--delay:.24s" href="https://www.instagram.com/khryss_ced/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" class="contact-icon"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        <span class="contact-label">Instagram</span>
+        <span class="contact-value">@khryss_ced</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <svg viewBox="0 0 100 100" class="logo-mark footer-mark" aria-hidden="true">
+    <polygon points="50,4 90,27 90,73 50,96 10,73 10,27" class="logo-hex"/>
+  </svg>
+  <p>&copy; <span id="year"></span> Khryss Cedrick G. Cargullo. Built with intent.</p>
+</footer>
+
+<!-- ===== Portfolio Chatbot ===== -->
+<div class="chatbot" id="chatbot">
+  <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open Cedie, the portfolio assistant" aria-expanded="false">
+    <svg viewBox="0 0 24 24" class="chatbot-toggle-icon chatbot-icon-open"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>
+    <svg viewBox="0 0 24 24" class="chatbot-toggle-icon chatbot-icon-close"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+
+  <div class="chatbot-window" id="chatbotWindow" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-text">
+        <span class="chatbot-title">Cedie</span>
+        <span class="chatbot-subtitle">AI Assistant</span>
+      </div>
+    </div>
+
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="chatbot-msg bot">Hi, I'm Cedie! I can answer questions about this portfolio — skills, education, experience, achievements, or how to get in touch. What would you like to know?</div>
+    </div>
+
+    <form class="chatbot-input-row" id="chatbotForm">
+      <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask Cedie about the portfolio…" autocomplete="off" maxlength="200" />
+      <button type="submit" class="chatbot-send" aria-label="Send message">
+        <svg viewBox="0 0 24 24"><path d="M4 12 20 4l-6 16-3-7-7-1Z"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-bg.js"></script>
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
